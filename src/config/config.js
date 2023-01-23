@@ -1,4 +1,4 @@
-const fs = require("fs");
+require("dotenv").config();
 
 module.exports = {
   development: {
@@ -30,11 +30,5 @@ module.exports = {
     host: process.env.DB_HOSTNAME,
     port: process.env.DB_PORT,
     dialect: "mysql",
-    dialectOptions: {
-      bigNumberStrings: true,
-      ssl: {
-        ca: fs.readFileSync(__dirname + "/mysql-ca-main.crt"),
-      },
-    },
   },
 };
